@@ -36,6 +36,7 @@ models/*.h5
 models/*.pt
 models/*.pth
 models/*.joblib
+models/saved_models/
 
 # IDE
 .vscode/
