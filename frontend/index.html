@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematch AI Recommender</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cinematch <span>AI</span></div>
+        <div class="user-controls">
+            <label for="userId">User ID:</label>
+            <input type="number" id="userId" value="15" min="1" max="610">
+            
+            <label for="recommendCount">Items:</label>
+            <input type="number" id="recommendCount" value="10" min="5" max="30">
+            
+            <label for="algoChoice">Algorithm:</label>
+            <select id="algoChoice">
+                <option value="hybrid">Hybrid (SVD + Item-Item)</option>
+                <option value="svd">Pure Matrix Factorization</option>
+            </select>
+            
+            <button id="refreshBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+        </div>
+    </nav>
+    
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Your Next Obsession.</h1>
+            <p class="hero-subtitle">Powered by advanced Deep Collaborative Filtering and Matrix Factorization.</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="recs-section">
+            <div class="section-header">
+                <h2>Top Matches For You</h2>
+                <div class="loading-spinner" id="loadingSpinner"></div>
+            </div>
+            <div class="error-msg" id="errorMsg"></div>
+            <div class="movie-grid" id="movieGrid">
+                <!-- Movie cards injected via JS -->
+            </div>
+        </section>
+
+        <section class="similar-section">
+            <div class="section-header">
+                <h2>Find Connected Masterpieces</h2>
+            </div>
+            <div class="similar-controls">
+                <input type="number" id="similarMovieId" value="1" placeholder="Seed Movie ID (e.g. 1)">
+                <button id="similarBtn"><i class="fas fa-search"></i> Find Similar</button>
+                <div class="loading-spinner" id="loadingSpinnerSimilar"></div>
+            </div>
+            <div class="error-msg" id="errorMsgSimilar"></div>
+            <div class="movie-grid" id="similarGrid">
+                <!-- Similar cards injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
