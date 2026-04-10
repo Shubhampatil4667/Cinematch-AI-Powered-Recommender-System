@@ -31,12 +31,10 @@ data/raw/
 data/processed/
 
 # Model artifacts (large binary files)
-models/*.pkl
 models/*.h5
 models/*.pt
 models/*.pth
 models/*.joblib
-models/saved_models/
 
 # IDE
 .vscode/
